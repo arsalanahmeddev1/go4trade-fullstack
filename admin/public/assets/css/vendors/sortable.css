@@ -1,0 +1,41 @@
+.sortable-list {
+    min-height: 50px;
+}
+
+.related-blog-item {
+    cursor: move;
+    transition: all 0.2s ease;
+}
+
+.related-blog-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.drag-handle {
+    cursor: grab;
+    color: #6c757d;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.sortable-ghost {
+    opacity: 0.5;
+    background-color: #f8f9fa;
+}
+
+.sortable-chosen {
+    background-color: #e3f2fd;
+    border: 2px dashed #2196f3;
+}
+
+.related-blog-item .actions {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.related-blog-item:hover .actions {
+    opacity: 1;
+} 
