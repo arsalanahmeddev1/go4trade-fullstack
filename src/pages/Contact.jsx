@@ -66,7 +66,7 @@ const Contact = () => {
           icon: 'success',
           title: 'Success!',
           text: result.message || 'Your message has been submitted successfully!',
-          confirmButtonColor: '#004986',
+          confirmButtonColor: '#01111f',
         });
         
         // Reset form
@@ -82,7 +82,7 @@ const Contact = () => {
           icon: 'error',
           title: 'Error!',
           text: result.message || 'Something went wrong. Please try again.',
-          confirmButtonColor: '#00FFFF',
+          confirmButtonColor: '#01111f',
         });
       }
     } catch (error) {
@@ -91,7 +91,7 @@ const Contact = () => {
         icon: 'error',
         title: 'Error!',
         text: 'Network error. Please check your connection and try again.',
-        confirmButtonColor: '#00FFFF',
+        confirmButtonColor: '#01111f',
       });
     }
   };

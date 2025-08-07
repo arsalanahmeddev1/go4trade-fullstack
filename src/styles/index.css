@@ -1001,6 +1001,7 @@ input[type="range"]::-ms-thumb {
   animation: l3 1s infinite linear;
 }
 @keyframes l3 {to{transform: rotate(1turn)}}
+
 /* new css */
 .my-btn.contact-submit {
   @apply py-[17px] px-[58px];
@@ -1010,6 +1011,12 @@ input[type="range"]::-ms-thumb {
 }
 .blog-detail * {
   @apply !text-white;
+}
+.blog-detail-content img {
+  @apply w-full object-cover max-h-[500px] rounded-[30px];
+}
+.blog-detail .sticky {
+  @apply mt-[50px];
 }
 /* Animation */
 @keyframes bounce2 {

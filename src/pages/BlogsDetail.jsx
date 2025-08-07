@@ -61,20 +61,14 @@ const BlogDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column - Main Blog Content */}
           <div className="lg:col-span-8">
-            <h1 className="text-[40px] font-bold text-white mb-6">{blog.title}</h1>
+            {/* <h1 className="text-[40px] font-bold text-white mb-6">{blog.title}</h1> */}
             
             {/* Blog Image */}
-            <div className="image w-full h-[400px] mb-6">
-              <img
-                src={extractFirstImage(blog.content)}
-                alt={blog.title}
-                className="w-full h-full object-cover rounded-[20px]"
-              />
-            </div>
+            
             
             {/* Blog Content */}
             <div
-              className="content text-white text-[18px] leading-8"
+              className="content blog-detail-content text-white text-[18px] leading-8"
               dangerouslySetInnerHTML={{ __html: blog.content }}
             ></div>
             

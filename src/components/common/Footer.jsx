@@ -30,7 +30,7 @@ const Footer = () => {
         icon: 'error',
         title: 'Error!',
         text: 'Please enter your email address.',
-        confirmButtonColor: '#00FFFF',
+        confirmButtonColor: '#01111f',
       });
       return;
     }
@@ -62,7 +62,7 @@ const Footer = () => {
           icon: 'success',
           title: 'Success!',
           text: result.message || 'Successfully subscribed to our newsletter!',
-          confirmButtonColor: '#00FFFF',
+          confirmButtonColor: '#01111f',
         });
         
         // Reset form
@@ -73,7 +73,7 @@ const Footer = () => {
           icon: 'error',
           title: 'Error!',
           text: result.message || 'Something went wrong. Please try again.',
-          confirmButtonColor: '#00FFFF',
+          confirmButtonColor: '#01111f',
         });
       }
     } catch (error) {
@@ -82,7 +82,7 @@ const Footer = () => {
         icon: 'error',
         title: 'Error!',
         text: 'Network error. Please check your connection and try again.',
-        confirmButtonColor: '#00FFFF',
+        confirmButtonColor: '#01111f',
       });
     }
   };

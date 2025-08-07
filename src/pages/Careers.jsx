@@ -33,6 +33,7 @@ const Careers = () => {
           icon: 'error',
           title: 'Invalid File Type',
           text: 'Please upload a PDF, DOC, or DOCX file.',
+          confirmButtonColor: '#01111f',
         });
         e.target.value = '';
         return;
@@ -44,6 +45,7 @@ const Careers = () => {
           icon: 'error',
           title: 'File Too Large',
           text: 'Please upload a file smaller than 2MB.',
+          confirmButtonColor: '#01111f',
         });
         e.target.value = '';
         return;
@@ -51,6 +53,13 @@ const Careers = () => {
       
       setResumeFile(file);
     }
+  };
+
+  const handleApplyNow = (position) => {
+    setFormData(prev => ({
+      ...prev,
+      position: position
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -61,6 +70,7 @@ const Careers = () => {
         icon: 'error',
         title: 'Resume Required',
         text: 'Please upload your resume.',
+        confirmButtonColor: '#01111f',
       });
       return;
     }
@@ -87,6 +97,7 @@ const Careers = () => {
           icon: 'success',
           title: 'Application Submitted!',
           text: data.message,
+          confirmButtonColor: '#01111f',
         }).then(() => {
           // Reset form
           setFormData({
@@ -104,6 +115,7 @@ const Careers = () => {
           icon: 'error',
           title: 'Submission Failed',
           text: data.message || 'An error occurred while submitting your application.',
+          confirmButtonColor: '#01111f',
         });
       }
     } catch (error) {
@@ -112,6 +124,7 @@ const Careers = () => {
         icon: 'error',
         title: 'Network Error',
         text: 'Please check your internet connection and try again.',
+        confirmButtonColor: '#01111f',
       });
     } finally {
       setIsSubmitting(false);
@@ -143,8 +156,8 @@ const Careers = () => {
                     {content.para}
                   </p>
                   <BubbleButton
-                    href={content.link}
-                    className="my-btn text-white font-medium bg-blue-gradient hover:opacity-60 transition inline-block"
+                    onClick={() => handleApplyNow(content.title)}
+                    className="my-btn text-white font-medium bg-blue-gradient hover:opacity-60 transition inline-block cursor-pointer"
                   >
                     {content.linkText}
                   </BubbleButton>
@@ -198,7 +211,7 @@ const Careers = () => {
                     name="resume"
                     accept=".pdf,.doc,.docx"
                     onChange={handleFileChange}
-                    className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+                    className="w-full px-3 py-2 border border-gray-600 rounded-md bg-transparent text-white file:hidden"
                     required
                   />
                   <p className="text-xs text-gray-400 mt-1">
@@ -206,6 +219,7 @@ const Careers = () => {
                   </p>
                 </div>
                 <TextArea
+                  className="text-white"
                   label="Your Message"
                   name="message"
                   value={formData.message}
